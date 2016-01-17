@@ -1,3 +1,26 @@
 <template name="content">
-  Content
+  <div class="clipyForm">
+    <input type="hidden" class="clipyId">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="language">text</span>&nbsp;
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:fn.editorLanguage('text')">text</a></li>
+          <li><a href="javascript:fn.editorLanguage('html')">html</a></li>
+          <li><a href="javascript:fn.editorLanguage('css')">css</a></li>
+          <li><a href="javascript:fn.editorLanguage('javascript')">js</a></li>
+        </ul>
+      </div>
+      <input type="text" class="form-control clipyTitle" placeholder="Title">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-primary btnSave">Save</button>
+      </div>
+    </div>
+    <div class="clipyContent">
+      <div id="editor" class="editor"></div>
+    </div>
+  </div>
 </template>

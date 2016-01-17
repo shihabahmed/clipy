@@ -1,3 +1,28 @@
 <template name="sidebar">
-  Sidebar
+  <div class="account">
+    {{> loginButtons}}
+  </div>
+  <div class="search">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  <div class="clipies">
+    {{> clipies}}
+  </div>
+</template>
+
+<template name="clipies">
+  <ul>
+    {{#each clipies}}
+      {{> clipy}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="clipy">
+  <li data-title="{{title}}">
+    <span class="clipy" data-id="{{_id}}" data-title="{{title}}" data-content="{{content}}" data-language="{{language}}">
+      {{title}}
+      <span class="delete">del</span>
+    </span>
+  </li>
 </template>
