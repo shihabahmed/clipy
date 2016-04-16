@@ -13,9 +13,15 @@ Template.content.events({
 
     if (clipy.content.length > 0) {
       if (clipy.id && clipy.id.length > 0) {
-        Meteor.call('updateClipy', clipy);
+        if (Meteor.userId()) {
+          Meteor.call('updateClipy', clipy);
+        } else {
+          
+        }
       } else {
-        Meteor.call('addClipy', clipy);
+        if (Meteor.userId()) {
+          Meteor.call('addClipy', clipy);
+        }
       }
       jClipyId.val('');
       jClipyTitle.val('');
@@ -25,3 +31,11 @@ Template.content.events({
     }
   }
 });
+
+
+var local = {
+  getClipies: function() {
+    return JSON.parse(localStorage.getItem('clipies'));
+  },
+  addClipy: function(clipy) {}
+};

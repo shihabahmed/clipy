@@ -1,7 +1,4 @@
 Meteor.publish('clipies', function() {
-  return Clipies.find({
-    $or: [
-      { owner: this.userId }
-    ]
-  });
+  Meteor.call('getClipies');
+  console.log(Meteor.call('getClipies'));
 });

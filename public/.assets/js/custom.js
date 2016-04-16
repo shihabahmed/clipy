@@ -20,7 +20,7 @@ var jWindow, jSidebar, jAccount, jSearch, jClipies, jContent, jClipyId, jClipyTi
         jSidebar.css('height', winSize.height);
         jContent.css({
           'height': winSize.height,
-          'width': winSize.width - jSidebar.outerWidth(true)
+          'width': (winSize.width - jSidebar.outerWidth(true) - 1)
         });
 
         jClipies.css('height', (winSize.height - jAccount.outerHeight(true) - jSearch.outerHeight(true) - 30));

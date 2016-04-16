@@ -1,6 +1,13 @@
 Clipies = new Mongo.Collection('clipies');
 
 Meteor.methods({
+  getClipies: function() {
+    return Clipies.find({
+      $or: [
+        { owner: this.userId }
+      ]
+    });
+  },
   addClipy: function(clipy) {
     if (!Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
